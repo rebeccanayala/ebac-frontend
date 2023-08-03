@@ -39,11 +39,11 @@ body {
 
 .itens button {
     border-radius: 5px;
-    padding: 5px;
+    padding: 8px;
 }
 
 .itens button:hover {
-    background-color: #2b3718;
+    background-color: #0e1208;
     color: white;
 }
 
