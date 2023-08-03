@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #c2d7a0;
+    color: #565656;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background-color: #556b2f;
+    color: white;
+    height: 400px;
+    width: 400px;
+    border-radius: 20px;
+}
+
+.itens {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+}
+
+.itens button {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.itens button:hover {
+    background-color: #2b3718;
+    color: white;
+}
+
+.products-name,
+.cost-price,
+.sale-price {
+    margin-bottom: 10px;
+}
+
+.products-name input:hover,
+.cost-price input:hover,
+.sale-price input:hover {
+    background-color: #ebffda;
+}
+
+
+
+
+
+
