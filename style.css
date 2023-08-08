@@ -29,7 +29,7 @@ body {
     border-radius: 20px;
 }
 
-.itens {
+.items {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,12 +37,12 @@ body {
     padding: 80px;
 }
 
-.itens button {
+.items button {
     border-radius: 5px;
     padding: 8px;
 }
 
-.itens button:hover {
+.items button:hover {
     background-color: #0e1208;
     color: white;
 }
