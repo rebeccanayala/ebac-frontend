@@ -16,11 +16,10 @@ form.addEventListener('submit', function(e){
     
     formValidity = itemsValidity(valA, valB);
     
-    if (formValidity){
+    if (!formValidity){
         document.querySelector('.error-message').style.display = 'none';
         itemssuccessmessage.innerHTML = successmessage;
         itemssuccessmessage.style.display = 'block';
-        document.querySelector('.error-message').style.display = 'none';
 
         valA.value = '';
         valB.value = '';
