@@ -74,7 +74,7 @@ input[type=number] {
 
 .success-message {
     background-color: #000a06;
-    padding: 20px;
+    padding: 10px;
     color: #fff;
     border-radius: 5px;
     display: none;

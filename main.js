@@ -1,31 +1,32 @@
 const form = document.getElementById('form-validation');
 
-let formValidity = false;
+form.addEventListener('submit', function(e) {
 
-function itemsValidity (valA, valB){
-    return valB > valA;
-}
-
-form.addEventListener('submit', function(e){
     e.preventDefault();
-    let valA = parseFloat(document.getElementById('cost-price').value);
-    let valB = parseFloat(document.getElementById('sale-price').value);
 
-    const successmessage = 'Cadastro realizado com sucesso!';
+    let valA = parseFloat(document.getElementById('inputA').value);
+    let valB = parseFloat(document.getElementById('inputB').value);
+
+    const successMessage = 'Cadastro realizado com sucesso!';
+    const errorMessage = 'O preço de venda deve ser maior ou igual ao preço de custo.';
+
     const itemssuccessmessage = document.querySelector('.success-message');
-    
-    formValidity = itemsValidity(valA, valB);
-    
-    if (!formValidity){
-        document.querySelector('.error-message').style.display = 'none';
-        itemssuccessmessage.innerHTML = successmessage;
+    const itemerrormessage = document.querySelector('.error-message');
+
+    if (valB > valA) {
+
+        itemerrormessage.style.display = 'none';
+        itemssuccessmessage.innerHTML = successMessage;
         itemssuccessmessage.style.display = 'block';
 
-        valA.value = '';
-        valB.value = '';
+        document.getElementById('cost-price').value = '';
+        document.getElementById('sale-price').value = '';
 
     } else {
-        document.querySelector('.error-message').style.display = 'block';
+
         itemssuccessmessage.style.display = 'none';
+        itemerrormessage.innerHTML = errorMessage;
+        itemerrormessage.style.display = 'block';
     }    
-})
+
+});
