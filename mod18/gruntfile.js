@@ -4,7 +4,11 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('olaGrunt', function() {
-        console.log('Olá Grunt');
+        const done = this.async();
+        setTimeout(function() {
+            console.log('Olá Grunt');
+            done();
+        },3000);
     });
 };
 
