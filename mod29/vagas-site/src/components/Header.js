@@ -1,12 +1,17 @@
-import React from 'react';
-import { Header as HeaderStyled } from '../styles';
+import styled from 'styled-components';
+
+const Cabecalho = styled.header`
+  background-color: ${({ theme }) => theme.cores.fundo};
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: ${({ theme }) => theme.cores.texto};
+`;
 
 function Header() {
-  return (
-    <HeaderStyled>
-      <h1>SITE DE VAGAS</h1>
-    </HeaderStyled>
-  );
+  return <Cabecalho>EBAC Jobs</Cabecalho>;
 }
 
 export default Header;
+

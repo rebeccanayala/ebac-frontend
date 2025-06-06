@@ -1,27 +1,52 @@
-import React from 'react';
-import { Formulario as FormStyled } from '../styles';
+import { useState } from 'react';
+import styled from 'styled-components';
 
-function Formulario({ busca, setBusca, filtro, setFiltro }) {
+const Form = styled.form`
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+`;
+
+const Campo = styled.input`
+  width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+`;
+
+const Botao = styled.button`
+  background-color: #86425e;
+  color: ${({ theme }) => theme.cores.branco};
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0 5px 5px 0;
+  font-weight: bold;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.cores.primaria};
+  }
+`;
+
+
+function Formulario({ aoBuscar }) {
+  const [termoBusca, setTermoBusca] = useState('');
+
+  const handleSubmit = (evento) => {
+    evento.preventDefault();
+    aoBuscar(termoBusca);
+  };
+
   return (
-    <FormStyled>
-      <h2>Filtrar Vagas</h2>
-      <input
+    <Form onSubmit={handleSubmit}>
+      <Campo
         type="text"
-        placeholder="Digite a vaga"
-        value={busca}
-        onChange={(e) => setBusca(e.target.value)}
+        placeholder="Front-end, fullstack, node, design"
+        value={termoBusca}
+        onChange={(evento) => setTermoBusca(evento.target.value)}
       />
-      <select
-        value={filtro}
-        onChange={(e) => setFiltro(e.target.value)}
-      >
-        <option>Todos</option>
-        <option>Remoto</option>
-        <option>Presencial</option>
-      </select>
-    </FormStyled>
+      <Botao type="submit">Pesquisar</Botao>
+    </Form>
   );
 }
 
 export default Formulario;
-
